@@ -29,11 +29,17 @@ function Header() {
                 Fashion
               </span>
             </Link>
-            <div className="flex lg:hidden block">
-              <span className="text-[12px] flex items-center text-primary">Language <FaCaretDown /></span>
-              <span className="px-1 text-[12px]">|</span>
-              <span className="text-[12px] flex items-center text-primary">Currency <FaCaretDown /></span>
-              <span className="pl-1 text-[12px]">|</span>
+            <div className="lg:hidden block">
+              <div className="flex items-center">
+                <span className="text-[12px] flex items-center text-primary">
+                  Language <FaCaretDown />
+                </span>
+                <span className="px-1 text-[12px]">|</span>
+                <span className="text-[12px] flex items-center text-primary">
+                  Currency <FaCaretDown />
+                </span>
+                <span className="pl-1 text-[12px]">|</span>
+              </div>
             </div>
           </div>
           <div className="lg:block hidden">
@@ -170,8 +176,15 @@ function Header() {
       {profile && (
         <div className="top-16 right-20 absolute bg-gray-200">
           <div className="py-2 px-5 w-[160px]">
-            <Link to="/profile" className="flex items-center gap-2 pb-2 text-[15px]"><FaUser /> Profile</Link>
-            <span className="flex items-center gap-2 cursor-pointer text-[15px]"><GoGear className="animate-spin" /> Setting</span>
+            <Link
+              to="/profile"
+              className="flex items-center gap-2 pb-2 text-[15px]"
+            >
+              <FaUser /> Profile
+            </Link>
+            <span className="flex items-center gap-2 cursor-pointer text-[15px]">
+              <GoGear className="animate-spin" /> Setting
+            </span>
           </div>
         </div>
       )}
