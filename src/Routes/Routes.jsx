@@ -12,6 +12,12 @@ import ProfileUser from './../Pages/Profile/ProfileUser/ProfileUser';
 import Order from './../Pages/Profile/Order/Order';
 import Wishlist from './../Pages/Profile/Wishlist/Wishlist';
 import Details from "../Pages/Details/Details";
+import DashboardLayouts from "../Layouts/DashboardLayouts";
+import Category from './../Dashboard/Category/Category';
+import EditForm from './../Dashboard/Category/EditForm';
+import Product from './../Dashboard/Product/Product';
+import AddProducts from './../Dashboard/Product/AddProducts';
+import AdminUser from './../Dashboard/Users/AdminUser';
 
 export const router = createBrowserRouter([
   {
@@ -67,4 +73,34 @@ export const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path: '/dashboard',
+    element: <DashboardLayouts />,
+    children: [
+      {
+        path: '/dashboard',
+        element: "Home",
+      },
+      {
+        path: "/dashboard/category",
+        element: <Category />,
+      },
+      {
+        path: "/dashboard/editCategory/:id",
+        element: <EditForm />,
+      },
+      {
+        path: "/dashboard/product",
+        element: <Product />,
+      },
+      {
+        path: "/dashboard/addProduct",
+        element: <AddProducts />
+      },
+      {
+        path: "/dashboard/users",
+        element: <AdminUser />,
+      },
+    ]
+  }
 ]);
